@@ -7,16 +7,16 @@ Feature: user can login
 		Given I have a user with username "angeleah" with password "1234"
 		When I enter username "<username>"
 		 And enter "<password>"
-		Then I should be <log_in_state>
+		Then I should be <logged_in?>
 		
 		Scenarios: successful login
-		| username | password | logged_in_state |
-		| angeleah | 1234 	  | logged in		|
+		| username | password | logged_in? |
+		| angeleah | 1234 	  | 	Y	   |
 		
 		Scenarios: failed login
-		| username | password | logged_in_state |
-		| angleah  | 1234 	  | not logged in	|
-		| angeleah | 1237 	  | not logged in	|
-		| ageleah  | 1237 	  | not logged in	|
+		| username | password | logged_in?|
+		| angleah  | 1234 	  |		N	  |
+		| angeleah | 1237 	  |		N	  |
+		| ageleah  | 1237 	  | 	N     |
 		
 		
