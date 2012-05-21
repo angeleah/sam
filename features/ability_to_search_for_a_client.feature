@@ -5,19 +5,19 @@ Feature: ability to search for a client
 	
 	
 	Scenario: search with first name only
-		Given I enter a first name 
+		Given I enter a first name
 			And it is spelled correctly
 		When I press search
 		Then I should get a results page with all the results of that first name.
 		
 	Scenario: search with last name only
-		Given I enter a last name 
+		Given I enter a last name
 			And it is spelled correctly
 		When I press search
 		Then I should get a results page with all the results of that last name.
 	
 	Scenario: search with full name
-		Given I enter a first and last name 
+		Given I enter a first and last name
 			And it is spelled correctly
 		When I press search
 		Then I should get a results page with all the results of that first and last name.
@@ -27,12 +27,13 @@ Feature: ability to search for a client
 			And it is spelled incorrectly
 		When I press search
 		Then I should get and error message
+			And I should be shown my options(create a new record or search again)
 		
-	Scenario: search is unsuccessful
+	Scenario: no record found
 		Given I enter a name
 			And there is no record
 		When I press search
 		Then I should get and error message	
-		
+			And I should be shown my options(create a new record or search again)
 		
 			
