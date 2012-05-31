@@ -1,2 +1,7 @@
-<%= @client.first_name %>
-<%= @client.last_name %>
+<h1>
+	<%= @client.first_name %>
+	<%= @client.last_name %>
+</h1>
+<div class="actions">
+	<%= link_to "Add Record", edit_client_path %>
+</div>

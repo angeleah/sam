@@ -25,4 +25,11 @@ describe ClientsController do
       assigns[:client].should_not be_nil
     end
   end
+  
+  describe "GET 'show'" do
+    
+    
+  end
+  
+
 end

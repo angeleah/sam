@@ -3,7 +3,7 @@ Feature: user can logout
 	I want to be able to logout
 	So that I can restrict access to my client information
 	
-	Scenario 1: click the logout button
+	Scenario: click the logout button
 		Given I am a user named Angeleah
 		When I click the log out button
 		A message saying " you have successfully logged out" should appear

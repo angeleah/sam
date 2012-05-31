@@ -7,8 +7,9 @@ class ClientsController < ApplicationController
     client = Client.create(params[:client])
     if client.save
       redirect_to client
-    else  
-    end  
+    else 
+      render "new"
+    end 
   end
   
   def new

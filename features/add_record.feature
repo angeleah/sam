@@ -3,7 +3,7 @@ Feature: add a record
 	I want to be able to add a record
 	So that I can keep my data organized
 	
-	Scenario 1: add a record to a client with 0 records
+	Scenario: add a record to a client with 0 records
 		Given I have a client with first name "Kelly" 
 			And last name "Zeeba"
 			And she has 0 records
@@ -12,7 +12,7 @@ Feature: add a record
 			And when I click "save" there should be 1 record 
 		
 		
-	Scenario 2: add a record to a client with 1 records
+	Scenario: add a record to a client with 1 records
 		Given I have a client with first name "Kelly" 
 			And last name "Zeeba"
 			And she has 1 records
