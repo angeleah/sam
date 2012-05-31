@@ -27,9 +27,10 @@ describe ClientsController do
   end
   
   describe "GET 'show'" do
-    
-    
+    # I need some way to say if there are notes, show them
   end
   
-
+  describe "Get 'edit'" do
+    #this should allow you to dit the client name diff from edit notes.
+  end
 end
