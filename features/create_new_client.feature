@@ -8,7 +8,7 @@ Feature: ability to add a new client
 			And I am creating a new client
 		When I enter first name "<first_name>"
 		  	And I enter last name "<last_name>"
-			And press "add client"
+		When I press "add client"
 		Then client count should be "<client_count>"
 		
 		Scenarios: successful add

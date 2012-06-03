@@ -31,6 +31,7 @@ describe ClientsController do
   end
   
   describe "Get 'edit'" do
-    #this should allow you to dit the client name diff from edit notes.
+   get :edit
+   Client.find(params[:id]) 
   end
 end
