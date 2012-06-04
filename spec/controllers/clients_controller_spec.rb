@@ -26,12 +26,4 @@ describe ClientsController do
     end
   end
   
-  describe "GET 'show'" do
-    # I need some way to say if there are notes, show them
-  end
-  
-  describe "Get 'edit'" do
-   get :edit
-   Client.find(params[:id]) 
-  end
 end

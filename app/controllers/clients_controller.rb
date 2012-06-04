@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
   def index
-    
+    @clients = Client.all
   end
   
   def create
@@ -21,7 +21,17 @@ class ClientsController < ApplicationController
   end
   
   def edit
-    
+    @client = Client.find(params[:id])
+    render "edit"
+  end
+  
+  def update
+    @client = Client.find(params[:id])
+    if @client.update_attributes(params[:client])
+      redirect_to client_path
+    else 
+      render "edit"  
+    end
   end
   
 
