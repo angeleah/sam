@@ -35,9 +35,15 @@ class NotesController < ApplicationController
       redirect_to client_note_path
     else
        render "edit"
-    end    
+    end
   end
   
+   def destroy
+     @client = Client.find(params[:client_id])
+     @note = Note.find(params[:id])
+     @note.destroy
+     redirect_to client_path
+   end
 
 end
 
