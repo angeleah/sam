@@ -5,13 +5,13 @@ class NotesController < ApplicationController
   
   def new
     @client = Client.find(params[:client_id])
-    @note = Note.new
+    @note = @client.notes.new
   end
   
   def create
     @client = Client.find(params[:client_id])
     if
-      @client.notes.create!(params[:notes])
+      @client.notes.create!(params[:note])
       redirect_to @client
     else
       render "new"
@@ -20,7 +20,22 @@ class NotesController < ApplicationController
   
   def show
     @client = Client.find(params[:client_id])
-    @note = Note.find(params[:note]) 
+    @note = Note.find(params[:id])
+  end
+  
+  def edit
+    @client = Client.find(params[:client_id])
+    @note = Note.find(params[:id])
+  end
+  
+  def update
+    @client = Client.find(params[:client_id])
+    @note = Note.find(params[:id])
+    if @note.update_attributes(params[:note])
+      redirect_to client_note_path
+    else
+       render "edit"
+    end    
   end
   
 

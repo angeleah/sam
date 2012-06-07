@@ -1,10 +1,10 @@
 <h1>Add a Note</h1>
 
 <%= form_for [@client, @note] do |f| %>
-		<div class="field">
-			<%= f.label :add_note %>
-			<%= f.text_field :note %>
-		</div>
+	<div class="field">
+		<%= f.label :note %>
+		<%= f.text_area :note %>
+	</div>
 	<%= f.submit "add note" %>
 <% end %>	
-
+	

@@ -5,12 +5,13 @@
 <div class="actions">
 	<%= link_to "Add Note", new_client_note_path(@client) %>
 	<%= link_to "Edit Client", edit_client_path %>
-	<%= link_to "Return to all Clients", clients_path %>
+	<%= link_to "Show all Clients", clients_path %>
 </div>
 
 <ul class="notes">
 	<% @client.notes.each do |note| %>
 		<li><%= note.note %></li>
+		<%= link_to "show note", client_note_path(@client, note)%>
 	<% end %>
 </ul>
 

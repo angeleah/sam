@@ -2,6 +2,12 @@ Sam::Application.routes.draw do
   resources :clients do
     resources :notes
   end
+# match "hello/:myparam1/blah/asdf/:myparam2/:myparam3", :to => "magazines#do_something" 
+
+#match "client/:client_id/notes/:id", :as => :client_note
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

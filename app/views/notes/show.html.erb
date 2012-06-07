@@ -1,0 +1,16 @@
+<h1>
+	<%= @client.first_name %>
+	<%= @client.last_name %>
+</h1>
+<div class="actions">
+	<%= link_to "Add Note", new_client_note_path(@client) %>
+	<%= link_to "Edit Client", edit_client_path %>
+	<%= link_to "Back to all Clients", clients_path %>
+	<%= link_to "back to all Notes", client_path(@client)%>
+</div>
+<div class="notes">
+	<%= @note.note %>
+</div>
+<div class="actions">
+	<%= link_to "Edit Note", edit_client_note_path(@client) %>
+</div>
