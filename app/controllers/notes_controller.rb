@@ -42,7 +42,7 @@ class NotesController < ApplicationController
      @client = Client.find(params[:client_id])
      @note = Note.find(params[:id])
      @note.destroy
-     redirect_to client_path
+     redirect_to client_path(@client)
    end
 
 end

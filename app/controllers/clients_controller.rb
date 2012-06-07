@@ -1,4 +1,5 @@
 class ClientsController < ApplicationController
+  http_basic_authenticate_with :name => "angeleah", :password => "Cl13nt5"
   def index
     @clients = Client.all
   end
