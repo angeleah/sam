@@ -53,7 +53,6 @@ describe ClientsController do
   end
   
   describe "PUT 'update'" do
-   #this test works even when the code is commented out
     it "should change the clients attributes" do
       client = Client.create!(:first_name => "Kelly", :last_name => "Zeba")
       client.update_attributes(:first_name => "Kelli", :last_name => "Zeba")
