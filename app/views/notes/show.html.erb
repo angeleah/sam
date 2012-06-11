@@ -1,4 +1,6 @@
-<%= link_to "Back to all Clients", clients_path %>
+<%= 
+=begin
+link_to "Back to all Clients", clients_path %>
 <h1>
 	<%= @client.first_name %>
 	<%= @client.last_name %>
@@ -13,5 +15,6 @@
 </div>
 <div class="actions">
 	<%= link_to "Edit Note", edit_client_note_path(@client) %>
-	<%= link_to "Delete", { :action => :destroy, :id => @note.id }, :method => :delete, :confirm => 'Are you sure?' %>
+	<%= link_to "Delete", { :action => :destroy, :id => @note.id }, :method => :delete, :confirm => 'Are you sure?'
+=end %>
 </div>

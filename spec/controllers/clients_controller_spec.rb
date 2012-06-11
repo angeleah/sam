@@ -9,6 +9,13 @@ describe ClientsController do
       Client.count.should == 1
       Client.first.first_name.should == "Kelly"
       Client.first.last_name.should == "Zeba"
+      response.should redirect_to (Client.first)
+    end
+    
+    it "should not create a client without a last name" do
+      post :create, :client => {:first_name => "Kelly", :last_name => ""}
+      Client.count.should == 0
+      response.should render_template("new")
     end
   end
   
@@ -26,4 +33,60 @@ describe ClientsController do
     end
   end
   
+  describe "GET 'show'" do
+    
+   it "should render a show page" do
+     client = Client.create!(:first_name => "Kelly", :last_name => "Zeba")
+     get :show,:id => client.id
+     response.should be_success
+     assigns[:client].id.should == client.id
+    end
+  end
+  
+  describe "GET index" do
+     it "should render an index page" do
+       clients = Client.all
+       get :index
+       response.should be_success
+       assigns[:clients].should == clients
+     end
+  end
+  
+  describe "PUT 'update'" do
+   #this test works even when the code is commented out
+    it "should change the clients attributes" do
+      client = Client.create!(:first_name => "Kelly", :last_name => "Zeba")
+      client.update_attributes(:first_name => "Kelli", :last_name => "Zeba")
+      put :update,:id => client.id
+      client.first_name.should == "Kelli"
+      client.last_name.should == "Zeba"
+      get :show,:id => client.id
+      response.should be_success
+    end
+  end  
+  
+  describe "GET 'edit'" do
+    it "should render the edit form" do
+      client = Client.create!(:first_name => "Kelly", :last_name => "Zeba")
+       get :edit,:id => client.id
+       response.should be_success
+       assigns[:client].id.should == client.id
+    end
+  end
+  
+  describe "DELETE 'destroy'" do
+    it "should delete the client" do
+      client = Client.create!(:first_name => "Kelly", :last_name => "Zeba")
+      Client.count.should == 1
+      delete :destroy, :id => client
+      Client.count.should == 0
+      get :index
+      response.should be_success
+    end  
+  end
 end
+
+
+
+
+
