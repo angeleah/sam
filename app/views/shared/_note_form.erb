@@ -1,0 +1,7 @@
+<%= form_for [@client, @note] do |f| %>
+	<div class="field">
+		<%= f.label :note %>
+		<%= f.text_area :note %>
+	</div>
+	<%= f.submit %>
+<% end %>
