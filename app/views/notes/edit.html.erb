@@ -6,11 +6,6 @@
 	<%= @client.last_name %>
 </h1>
 <h12>Edit a Note</h2>
-
-<%= form_for [@client, @note] do |f| %>
-	<div class="field">
-		<%= f.label :note %>
-		<%= f.text_area :note %>
-	</div>
+	<%= render 'shared/note_form' %>
 	<%= f.submit "update note" %>
 <% end %>

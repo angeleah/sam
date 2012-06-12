@@ -1,11 +1,3 @@
-<%= form_for (@client) do |f| %>
-	<div class="field">
-		<%= f.label :first_name %>
-		<%= f.text_field :first_name %>
-	</div>
-	<div class="field">
-		<%= f.label :last_name %>
-		<%= f.text_field :last_name %>
-	</div>
+<%= render 'shared/client_form' %>
 	<%= f.submit "update client" %>	
 <% end %>

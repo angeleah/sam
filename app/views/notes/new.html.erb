@@ -1,11 +1,6 @@
 <%= link_to "Back to client", client_path(@client) %>
 <h1>Add a Note</h1>
-
-<%= form_for [@client, @note] do |f| %>
-	<div class="field">
-		<%= f.label :note %>
-		<%= f.text_area :note %>
-	</div>
+	<%= render "shared/note_form" %>
 	<%= f.submit "add note" %>
 <% end %>	
 	
