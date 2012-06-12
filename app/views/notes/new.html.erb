@@ -1,6 +1,4 @@
-<%= 
-=begin
-link_to "Back to client", client_path(@client) %>
+<%= link_to "Back to client", client_path(@client) %>
 <h1>Add a Note</h1>
 
 <%= form_for [@client, @note] do |f| %>
@@ -9,6 +7,5 @@ link_to "Back to client", client_path(@client) %>
 		<%= f.text_area :note %>
 	</div>
 	<%= f.submit "add note" %>
-<% end 
-=end %>	
+<% end %>	
 	

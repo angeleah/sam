@@ -84,8 +84,3 @@ describe ClientsController do
     end  
   end
 end
-
-
-
-
-

@@ -1,7 +1,5 @@
 <div class="actions">
-	<%= 
-=begin
-	link_to "Back to all notes", client_path(@client) %>
+	<%=	link_to "Back to all notes", client_path(@client) %>
 </div>
 <h1>
 	<%= @client.first_name %>
@@ -12,8 +10,7 @@
 <%= form_for [@client, @note] do |f| %>
 	<div class="field">
 		<%= f.label :note %>
-		<%= f.text_field :note %>
+		<%= f.text_area :note %>
 	</div>
 	<%= f.submit "update note" %>
-<% end 
-=end %>
+<% end %>
