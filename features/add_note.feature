@@ -7,9 +7,9 @@ Feature: add a note
 		Given I have a client with first name "Kelly" 
 			And last name "Zeeba"
 			And she has 0 notes
-		When I press "add note"
-		Then page should redirect to the notes page
-			When I press "save" 
+		When I press "Add Note"
+		Then page should redirect to the notes/new page
+			When I press Create Note 
 			And there should be 1 note 
 		
 		
@@ -17,8 +17,8 @@ Feature: add a note
 		Given I have a client with first name "Kelly" 
 			And last name "Zeeba"
 			And she has 1 notes
-		When I press "add note"
-		Then page should redirect to the notes page
-			When I press "save" 
+		When I press "Add Note"
+		Then page should redirect to the notes/new page
+			When I press Create Note 
 			And there should be 2 notes
 	
