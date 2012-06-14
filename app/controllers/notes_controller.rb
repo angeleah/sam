@@ -8,13 +8,13 @@
   end
   
   def create
-    if
-      @note = @client.notes.create!(params[:note])
-      redirect_to client_note_path(@client, @note)
-    else
-      render "new"
+      if
+        @note = @client.notes.create!(params[:note])
+        redirect_to client_note_path(@client, @note)
+      else
+        render "new"
+      end
     end
-  end
   
   def show
   end
@@ -23,13 +23,13 @@
   end
   
   def update
-    if @note.update_attributes(params[:note])
-      redirect_to client_note_path
-    else
-       render "edit"
-    end
-  end
-  
+     if @note.update_attributes(params[:note])
+       redirect_to client_note_path
+     else
+        render "edit"
+     end
+   end
+   
    def destroy
      @note.destroy
      redirect_to client_path(@client)
