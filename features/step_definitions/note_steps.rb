@@ -13,10 +13,18 @@ Given /^she has (\d+) notes$/ do |notes|
   end
 end
 
-When /^I press "(.*?)"$/ do |arg1|
-  click_button('note_form_button')
+Given /^I am creating a new note$/ do
+  visit(new_client_note_path(@client))
 end
 
-Then /^page should redirect to the notes\/new page$/ do
-  visit "/clients/1/notes/new"
+Given /^I fill in the note field$/ do
+  fill_in 'Note' , :with => "notes"
+end
+
+When /^I press Create Note$/ do
+  click_button('create_note')
+end
+
+Then /^there should be (\d+) notes$/ do |count|
+  Client.first.notes.count.should == count.to_i
 end

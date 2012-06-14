@@ -6,19 +6,19 @@ Feature: add a note
 	Scenario: add a note to a client with 0 notes
 		Given I have a client with first name "Kelly" 
 			And last name "Zeeba"
-			And she has 0 notes
-		When I press "Add Note"
-		Then page should redirect to the notes/new page
-			When I press Create Note 
-			And there should be 1 note 
+		Given she has 0 notes
+			And I am creating a new note
+			And I fill in the note field	
+		When I press Create Note 
+	 	Then there should be 1 notes 
 		
 		
 	Scenario: add a note to a client with 1 notes
 		Given I have a client with first name "Kelly" 
 			And last name "Zeeba"
-			And she has 1 notes
-		When I press "Add Note"
-		Then page should redirect to the notes/new page
-			When I press Create Note 
-			And there should be 2 notes
+		Given she has 1 notes
+			And I am creating a new note
+			And I fill in the note field	
+		When I press Create Note 
+	 	Then there should be 2 notes
 	
