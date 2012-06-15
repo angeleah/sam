@@ -2,6 +2,12 @@ require 'spec_helper'
 
 describe NotesController do
   
+  # login to http basic auth
+    include AuthHelper
+    before(:each) do
+      http_login
+    end
+  
   describe "GET 'notes/new'" do
     
     before(:each) do
@@ -52,11 +58,11 @@ describe NotesController do
    end
   
    describe "GET edit" do
-     # this is still passing when the code is commented out.
      it "should render the edit form" do
        client = Client.create!(:first_name => "Kelly", :last_name => "Zeba")  
        note = Note.create(:note => "This is a note.")
        get :edit,:client_id => client.id, :id => note.id
+       assigns[:note].should_not be_nil
        response.should be_success
      end
    end

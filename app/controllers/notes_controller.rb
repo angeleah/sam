@@ -1,5 +1,5 @@
  class NotesController < ApplicationController
-#   http_basic_authenticate_with :name => "angeleah", :password => "Cl13nt5"
+  http_basic_authenticate_with :name => "angeleah", :password => "Cl13nt5"
   before_filter :find_client
   before_filter :find_note, :except => [:new, :create]
    

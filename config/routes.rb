@@ -1,7 +1,9 @@
 Sam::Application.routes.draw do
+  root :to => "clients#index"
   resources :clients do
     resources :notes
   end
+  
 # match "hello/:myparam1/blah/asdf/:myparam2/:myparam3", :to => "magazines#do_something" 
 
 #match "client/:client_id/notes/:id", :as => :client_note
