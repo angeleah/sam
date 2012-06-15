@@ -1,4 +1,9 @@
 Sam::Application.configure do
+  
+  config.middleware.insert_after(::Rack::Lock, "::Rack::Auth::Basic", "Not for public eyes") do |u, p|
+    u == 'angeleah' && p == 'Cl13nt5'
+   end
+   
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
