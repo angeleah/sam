@@ -12,7 +12,6 @@ Feature: add a note
 		When I press Create Note 
 	 	Then there should be 1 notes 
 		
-		
 	Scenario: add a note to a client with 1 notes
 		Given I have a client with first name "Kelly" 
 			And last name "Zeeba"

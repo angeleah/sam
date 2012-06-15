@@ -1,5 +1,4 @@
 class ClientsController < ApplicationController
-  http_basic_authenticate_with :name => "angeleah", :password => "Cl13nt5"
   before_filter :find_client, :except => [:index, :create, :new]
 
   def index

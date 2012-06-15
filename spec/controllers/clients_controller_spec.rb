@@ -2,12 +2,6 @@ require 'spec_helper'
 
 describe ClientsController do
   
-  # login to http basic auth
-    include AuthHelper
-    before(:each) do
-      http_login
-    end
-  
   describe "POST 'create'" do
   
     it "should create a new client" do

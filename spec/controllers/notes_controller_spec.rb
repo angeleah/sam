@@ -2,12 +2,6 @@ require 'spec_helper'
 
 describe NotesController do
   
-  # login to http basic auth
-    include AuthHelper
-    before(:each) do
-      http_login
-    end
-  
   describe "GET 'notes/new'" do
     
     before(:each) do
