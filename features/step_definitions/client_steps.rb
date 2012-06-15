@@ -1,3 +1,4 @@
+#create_new_client.feature
 Given /^I have no clients$/ do
  #noop
 end
@@ -48,4 +49,15 @@ end
 When /^I fill\-in last name "(.*?)"$/ do |last_name|
   visit(edit_client_path(@client))
   fill_in('Last name', :with => last_name)
+end
+
+#delete_client.feature
+
+When /^I press Delete Client$/ do
+  visit(client_path(@client))
+  click_link('Delete Client')
+end
+
+Then /^client count should be (\d+)$/ do |count|
+  Client.count.should == count.to_i
 end

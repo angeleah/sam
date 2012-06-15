@@ -36,3 +36,22 @@ When /^I press Delete Note$/ do
   visit(client_note_path(@client,@client.notes.first))
   click_link('Delete')
 end
+
+#editing_a_note.feature
+
+Given /^she has a note "(.*?)"$/ do |note|
+  @note = Note.create(:note => note)
+end
+
+When /^I edit the note field with "(.*?)"$/ do |new_note|
+  visit(edit_client_note_path(@client,@note))
+  fill_in 'Note' , :with => new_note
+end
+
+When /^I press create_note$/ do
+  click_button('create_note')
+end
+
+Then /^the note should be "(.*?)"$/ do |note|
+  Note.first.note.should == note
+end
