@@ -1,3 +1,4 @@
+#add_note_feature
 Given /^I have a client with first name "(.*?)"$/ do |first_name|
  @client = Client.new(:first_name => first_name)
 end
@@ -27,4 +28,11 @@ end
 
 Then /^there should be (\d+) notes$/ do |count|
   Client.first.notes.count.should == count.to_i
+end
+
+#delete_note.feature
+
+When /^I press Delete Note$/ do
+  visit(client_note_path(@client,@client.notes.first))
+  click_link('Delete')
 end
