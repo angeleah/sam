@@ -1,5 +1,6 @@
 SAM - Salon Assistant Mini
 ==========================
+This was a little app I wrote to help me manage my client notes while I was working at my different salon locations during my life as a hairstylist.
 
 Usage:
 ------
