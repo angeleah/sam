@@ -6,9 +6,9 @@ Usage:
 ------
 - To run the app:
   + Clone the repo
-  + $ bundle
-  + Run $ rake db:migrate
-  + Run $ rake db:test:prepare
+  + Type $ bundle
+  + Type $ rake db:migrate
+  + Type $ rake db:test:prepare
   + Type $ rails s (or rails server)
   + Open a browser and navigate to localhost:3000
   + When asked to authorize, type in  username: user, password: Clients
@@ -16,7 +16,7 @@ Usage:
 - To run the specs:
   + Clone the repo
   + $ bundle
-  + Run $ rake db:migrate
-  + Run $ rake db:test:prepare
-  + Run $ rspec
+  + Type $ rake db:migrate
+  + Type $ rake db:test:prepare
+  + Type $ rspec
 
